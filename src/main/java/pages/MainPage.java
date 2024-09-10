@@ -12,6 +12,8 @@ import static org.junit.Assert.assertTrue;
 
 public class MainPage extends BasePage {
 
+    public static final String URL = "https://stellarburgers.nomoreparties.site/";
+
     private By loginButton = By.xpath(".//button[text()='Войти в аккаунт']");
     private By makeAnOrderButton = By.xpath(".//button[text()='Оформить заказ']");
     private By makeBurgerHeader = By.xpath(".//h1[text()='Соберите бургер']");

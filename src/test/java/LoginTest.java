@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -42,6 +44,8 @@ public class LoginTest extends BaseTest {
 
 
     @Test
+    @DisplayName("Authorization with login button on the main page")
+    @Description("Test checks authorization by clicking login button on the main page")
     public void authorizationWithLoginButtonOnMainPage() {
         objMainPage.waitForMainPageLoad();
         objMainPage.clickLoginButton();
@@ -54,6 +58,8 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Authorization with login button on the personal account page")
+    @Description("Test checks authorization by clicking login button on the personal account page")
     public void authorizationWithPersonalAccountButton() {
         objHeaderElement.clickPersonalAccount();
         objLoginPage.waitForLoginPageLoad();
@@ -65,6 +71,8 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Authorization with login button on the registration page")
+    @Description("Test checks authorization by clicking login button on the registration page")
     public void authorizationWithLoginButtonInRegistrationForm() {
         objHeaderElement.clickPersonalAccount();
         objLoginPage.waitForLoginPageLoad();
@@ -78,6 +86,8 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Authorization with login button on the password recovery page")
+    @Description("Test checks authorization by clicking login button on the password recovery page")
     public void authorizationWithLoginButtonInPasswordRecoveryForm() {
         objMainPage.waitForMainPageLoad();
         objMainPage.clickLoginButton();

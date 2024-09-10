@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +33,8 @@ public class RegistrationTest extends BaseTest {
 
 
     @Test
+    @DisplayName("Successful registration")
+    @Description("Test checks successful registration with correct user data")
     public void successfulRegistration() {
         step = new Steps();
         userClient = new UserClient();
@@ -54,6 +58,8 @@ public class RegistrationTest extends BaseTest {
      }
 
     @Test
+    @DisplayName("Unsuccessful registration")
+    @Description("Test checks unsuccessful registration with invalid password and getting expected error")
     public void unsuccessfulRegistrationWithWrongPassword() {
         user.setPassword("12345");
         objHeaderElement.waitForButtonLoad();

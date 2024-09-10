@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pages.MainPage;
 
 public class BaseTest {
 
@@ -11,8 +12,9 @@ public class BaseTest {
 
     @Before
     public void setUpDriver() {
-        driver = getDriver("chrome");
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        String driverType = System.getenv("WEB_DRIVER");
+        driver = getDriver(driverType == null ? "chrome" : driverType);
+        driver.get(MainPage.URL);
     }
 
     @After

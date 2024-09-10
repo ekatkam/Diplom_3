@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -42,6 +44,8 @@ public class ProfileTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Transition to personal account")
+    @Description("Test checks transition to personal account page by clicking personal account button")
     public void transitionToPersonalAccount() {
         objHeaderElement.clickPersonalAccount();
         boolean result = objProfilePage.checkProfileMenuIsDisplayed();
@@ -49,6 +53,8 @@ public class ProfileTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Transition from personal account to constructor")
+    @Description("Test checks transition from personal account page to constructor on the main page by clicking constructor button")
     public void transitionFromPersonalAccountToConstructorByConstructor() {
         objHeaderElement.clickPersonalAccount();
         objHeaderElement.clickConstructor();
@@ -57,6 +63,8 @@ public class ProfileTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Transition from personal account to constructor")
+    @Description("Test checks transition from personal account page to constructor on the main page by clicking Stellar Burger logo")
     public void transitionFromPersonalAccountToConstructorByLogo() {
         objHeaderElement.clickPersonalAccount();
         objHeaderElement.clickLogo();
@@ -65,6 +73,8 @@ public class ProfileTest extends BaseTest {
     }
 
     @Test
+    @DisplayName("Logout")
+    @Description("Test checks transition from personal account page to login page by clicking logout button")
     public void logoutFromPersonalAccount() {
         objHeaderElement.clickPersonalAccount();
         objProfilePage.clickLogoutButton();
